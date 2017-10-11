@@ -3,27 +3,27 @@ package ex4;
 public class Zoo {
 
 	private String nom;
-	private SavaneAfricaine savaneAfricaine;
+	private ZoneSavaneAfricaine savaneAfricaine;
 	private ZoneCarnivore zoneCarnivore;
-	private FermeReptile fermeReptile;
-	private Aquarium aquarium;
+	private ZoneFermeReptile fermeReptile;
+	private ZoneAquarium aquarium;
 	
 	public Zoo(String nom){
 		this.nom = nom;
 	}
 	
-	public void addAnimal(String nomAnimal, String typeAnimal, String comportement){
-		if (typeAnimal.equals("MAMMIFERE") && comportement.equals("CARNIVORE")){
-			zoneCarnivore.addAnimal(typeAnimal, nomAnimal, comportement);
+	public void addAnimal(Animal animal){
+		if (animal.getTypes().equals(TypeAnimal.MAMMIFERE) && animal.getComportements().equals("CARNIVORE")){
+			zoneCarnivore.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("MAMMIFERE") && comportement.equals("HERBIVORE")){
-			savaneAfricaine.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypes().equals(TypeAnimal.MAMMIFERE) && animal.getComportements().equals("HERBIVORE")){
+			savaneAfricaine.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("REPTILE")){
-			fermeReptile.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypes().equals(TypeAnimal.SERPENT)){
+			fermeReptile.addAnimal(animal);
 		}
-		else if (typeAnimal.equals("POISSON")){
-			aquarium.addAnimal(typeAnimal, nomAnimal, comportement);
+		else if (animal.getTypes().equals(TypeAnimal.POISSON)){
+			aquarium.addAnimal(animal);
 		}
 	}
 	

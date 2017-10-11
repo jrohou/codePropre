@@ -1,10 +1,11 @@
 package ex4;
 
 
-public class ZoneCarnivore extends Zone {
+public class ZoneAquarium extends Zone {
+	
 
 
 	public double calculerKgsNourritureParJour(){
-		return size() * 10;
+		return size() * 0.2;
 	}
 }
